@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Wireless Headphones - Product Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 50%, #f3f4f6 100%);
+        }
+        .product-shadow {
+            box-shadow: 0 25px 50px -12px rgba(239, 68, 68, 0.25);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .glow-red {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+        }
+        .pulse-red {
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+        }
+        input::placeholder {
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <nav class="bg-gray-100 px-4 sm:px-12 py-3 text-black">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-20 w-full text-center md:text-left">
+            <p class="text-sm md:text-lg">
+                Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+                <a href="#" class="font-bold underline pl-2 hover:text-red-500">Shop Now</a>
+            </p>
+            <select name="language" class="border p-1 md:p-2 rounded-md text-sm bg-gray-100 text-black" aria-label="Select Language">
+                <option value="">Select Language</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Main Navigation -->
+    <nav class="px-4 sm:px-8 md:px-16 lg:px-24 py-4 flex items-center justify-between relative bg-white">
+        <!-- Logo -->
+        <div>
+            <h1 class="font-bold text-2xl sm:text-3xl md:text-4xl">Exclusive</h1>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 lg:gap-12 font-semibold">
+            <a href="/" class="hover:text-red-500 transition-colors">Home</a>
+            <a href="/contact" class="hover:text-red-500 transition-colors">Contact</a>
+            <a href="/about" class="hover:text-red-500 transition-colors">About</a>
+            <a href="/signup" class="hover:text-red-500 transition-colors">Sign Up</a>
+        </div>
+
+        <!-- Search and Icons for Desktop -->
+        <div class="hidden md:flex items-center gap-8 lg:gap-12">
+            <form id="desktop-search-form" class="bg-gray-200 p-1 px-2 rounded-md w-[200px] lg:w-[250px] flex items-center border-r-4 border-gray-500">
+                <input name="search" class="bg-gray-200 outline-none p-2 rounded-md w-full text-black" type="search" placeholder="What are you looking for?" aria-label="Search products" />
+                <button type="submit" aria-label="Submit search">
+                    <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+                </button>
+            </form>
+            <div class="flex items-center gap-4 lg:gap-6">
+                <a href="/wishlist" aria-label="Wishlist">
+                    <i class="fa-solid fa-heart cursor-pointer hover:text-red-500 transition-colors"></i>
+                </a>
+                <a href="/cart" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping cursor-pointer hover:text-red-500 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Toggle -->
+        <div class="md:hidden flex items-center gap-4">
+            <button class="mobile-search-toggle cursor-pointer" aria-label="Toggle search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="/wishlist" aria-label="Wishlist">
+                <i class="fa-solid fa-heart cursor-pointer hover:text-red-500 transition-colors"></i>
+            </a>
+            <a href="/cart" aria-label="Shopping cart">
+                <i class="fa-solid fa-cart-shopping cursor-pointer hover:text-red-500 transition-colors"></i>
+            </a>
+            <button class="mobile-menu-toggle cursor-pointer" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Search Form (Hidden by Default) -->
+        <div class="mobile-search absolute top-full left-0 right-0 bg-white p-4 hidden shadow-md z-10">
+            <form id="mobile-search-form" class="bg-gray-200 p-1 px-2 rounded-md w-full flex items-center border-r-4 border-gray-500">
+                <input name="search" class="bg-gray-200 outline-none p-2 rounded-md w-full text-black" type="search" placeholder="What are you looking for?" aria-label="Search products" />
+                <button type="submit" aria-label="Submit search">
+                    <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Mobile Navigation Menu (Hidden by Default) -->
+        <div class="mobile-nav hidden position-fixed top-0 left-0 right-0 bottom-0 bg-white z-50 flex flex-col justify-center items-center">
+            <button class="absolute top-4 right-4 close-menu cursor-pointer" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="flex flex-col items-center gap-8 text-lg font-semibold">
+                <a href="/" class="hover:text-red-500 transition-colors">Home</a>
+                <a href="/contact" class="hover:text-red-500 transition-colors">Contact</a>
+                <a href="/about" class="hover:text-red-500 transition-colors">About</a>
+                <a href="/signup" class="hover:text-red-500 transition-colors">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Product Section -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Product Image -->
+            <div class="relative">
+                <div class="gradient-bg p-8 rounded-2xl product-shadow">
+                    <img id="main-image" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop" 
+                         alt="Product Image" 
+                         class="w-full h-96 object-cover rounded-lg hover-scale">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                        <i class="fas fa-fire mr-1"></i>HOT
+                    </div>
+                </div>
+                <!-- Thumbnail Images -->
+                <div class="flex space-x-4 mt-6">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop" 
+                         class="w-16 h-16 rounded-lg border-2 border-red-500 cursor-pointer hover-scale">
+                    <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=100&h=100&fit=crop" 
+                         class="w-16 h-16 rounded-lg border border-gray-600 cursor-pointer hover-scale hover:border-red-500">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100&h=100&fit=crop" 
+                         class="w-16 h-16 rounded-lg border border-gray-600 cursor-pointer hover-scale hover:border-red-500">
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="space-y-6">
+                <div>
+                    <h2 id="product-title" class="text-4xl font-bold text-black mb-2">Premium Wireless Headphones</h2>
+                    <p class="text-gray-600 text-lg">Professional Audio Experience</p>
+                </div>
+
+                <!-- Rating -->
+                <div class="flex items-center space-x-2">
+                    <div class="flex text-red-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-gray-600">(4.9) · 2,847 reviews</span>
+                </div>
+
+                <!-- Price -->
+                <div class="flex items-center space-x-4">
+                    <span id="product-price" class="text-3xl font-bold text-red-500">$299.99</span>
+                    <span class="text-xl text-gray-600 line-through">$399.99</span>
+                    <span class="bg-red-500 text-white px-2 py-1 rounded text-sm font-bold">25% OFF</span>
+                </div>
+
+                <!-- Features -->
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-red-500"></i>
+                        <span>Active Noise Cancellation</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-red-500"></i>
+                        <span>40-hour Battery Life</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-red-500"></i>
+                        <span>Premium Leather Comfort</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-red-500"></i>
+                        <span>Hi-Res Audio Certified</span>
+                    </div>
+                </div>
+
+                <!-- Color Options -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Color Options</h3>
+                    <div class="flex space-x-3">
+                        <div class="w-8 h-8 bg-black border-2 border-red-500 rounded-full cursor-pointer"></div>
+                        <div class="w-8 h-8 bg-white border border-gray-600 rounded-full cursor-pointer hover:border-red-500"></div>
+                        <div class="w-8 h-8 bg-red-500 border border-gray-600 rounded-full cursor-pointer hover:border-red-500"></div>
+                    </div>
+                </div>
+
+                <!-- Quantity -->
+                <div class="flex items-center space-x-4">
+                    <span class="text-lg font-semibold">Quantity:</span>
+                    <div class="flex items-center border border-gray-600 rounded">
+                        <button class="quantity-minus px-3 py-1 hover:bg-gray-200 transition-colors">-</button>
+                        <span class="quantity-display px-4 py-1 border-x border-gray-600">1</span>
+                        <button class="quantity-plus px-3 py-1 hover:bg-gray-200 transition-colors">+</button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="space-y-4">
+                    <button class="add-to-cart w-full bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-lg transition-colors pulse-red">
+                        <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                    </button>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="border border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                            <i class="fas fa-heart mr-2"></i>Wishlist
+                        </button>
+                        <button class="border border-gray-600 text-black hover:bg-gray-200 font-bold py-3 px-6 rounded-lg transition-colors">
+                            <i class="fas fa-share mr-2"></i>Share
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Shipping Info -->
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <i class="fas fa-truck text-red-500"></i>
+                        <span class="font-semibold">Free shipping on orders over $200</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-undo text-red-500"></i>
+                        <span class="font-semibold">30-day return policy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Specifications -->
+        <section class="mt-16">
+            <h3 class="text-2xl font-bold mb-8 text-center">Technical Specifications</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover-scale">
+                    <i class="fas fa-volume-up text-red-500 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2">Audio Quality</h4>
+                    <p class="text-gray-600">Hi-Res Audio, 20Hz-40kHz frequency response</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover-scale">
+                    <i class="fas fa-battery-full text-red-500 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2">Battery Life</h4>
+                    <p class="text-gray-600">40 hours playback, 5-minute quick charge</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover-scale">
+                    <i class="fas fa-bluetooth-b text-red-500 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2">Connectivity</h4>
+                    <p class="text-gray-600">Bluetooth 5.2, USB-C, 3.5mm jack</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-red-500 mt-16 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook text-black hover:text-red-500 cursor-pointer transition-colors text-xl"></i>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <i class="fab fa-twitter text-black hover:text-red-500 cursor-pointer transition-colors text-xl"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="fab fa-instagram text-black hover:text-red-500 cursor-pointer transition-colors text-xl"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <i class="fab fa-youtube text-black hover:text-red-500 cursor-pointer transition-colors text-xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-600">© 2025 AudioPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to get query parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                title: params.get("title") || "Premium Wireless Headphones",
+                price: params.get("price") || "299.99",
+                image: params.get("image") || "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop"
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Apply dynamic data from query parameters
+            const { title, price, image } = getQueryParams();
+            
+            // Update product title
+            const productTitle = document.getElementById('product-title');
+            productTitle.textContent = title;
+
+            // Update product price
+            const productPrice = document.getElementById('product-price');
+            productPrice.textContent = `$${parseFloat(price).toFixed(2)}`;
+
+            // Update main product image
+            const mainImage = document.getElementById('main-image');
+            mainImage.src = image;
+            mainImage.alt = title;
+
+            // Update first thumbnail to match main image
+            const thumbnails = document.querySelectorAll('.w-16.h-16');
+            thumbnails[0].src = image.replace('500&h=500', '100&h=100');
+
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const closeMenu = document.querySelector('.close-menu');
+
+            menuToggle.addEventListener('click', function() {
+                mobileNav.classList.add('open');
+                mobileNav.classList.remove('hidden');
+            });
+
+            closeMenu.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                mobileNav.classList.add('hidden');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mobileNav.classList.remove('open');
+                    mobileNav.classList.add('hidden');
+                }
+            });
+
+            // Mobile search toggle
+            const searchToggle = document.querySelector('.mobile-search-toggle');
+            const mobileSearch = document.querySelector('.mobile-search');
+
+            searchToggle.addEventListener('click', function() {
+                mobileSearch.classList.toggle('hidden');
+            });
+
+            // Close search when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileSearch.contains(event.target) && !searchToggle.contains(event.target)) {
+                    mobileSearch.classList.add('hidden');
+                }
+            });
+
+            // Quantity buttons
+            const minusBtn = document.querySelector('.quantity-minus');
+            const plusBtn = document.querySelector('.quantity-plus');
+            const quantityDisplay = document.querySelector('.quantity-display');
+            
+            let quantity = 1;
+            
+            minusBtn.addEventListener('click', function() {
+                if (quantity > 1) {
+                    quantity--;
+                    quantityDisplay.textContent = quantity;
+                }
+            });
+
+            plusBtn.addEventListener('click', function() {
+                quantity++;
+                quantityDisplay.textContent = quantity;
+            });
+
+            // Color selection
+            const colorOptions = document.querySelectorAll('.w-8.h-8');
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    colorOptions.forEach(opt => opt.classList.remove('border-red-500', 'border-2'));
+                    this.classList.add('border-red-500', 'border-2');
+                });
+            });
+
+            // Thumbnail selection
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('border-red-500', 'border-2'));
+                    this.classList.add('border-red-500', 'border-2');
+                    mainImage.src = this.src.replace('100&h=100', '500&h=500');
+                });
+            });
+
+            // Add to cart animation
+            const addToCartBtn = document.querySelector('.add-to-cart');
+            addToCartBtn.addEventListener('click', function() {
+                this.innerHTML = '<i class="fas fa-check mr-2"></i>Added to Cart!';
+                this.classList.remove('bg-red-500', 'hover:bg-red-600');
+                this.classList.add('bg-green-500');
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-shopping-cart mr-2"></i>Add to Cart';
+                    this.classList.remove('bg-green-500');
+                    this.classList.add('bg-red-500', 'hover:bg-red-600');
+                }, 2000);
+            });
+
+            // Search form submission
+            const searchForms = document.querySelectorAll('#desktop-search-form, #mobile-search-form');
+            searchForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const query = this.querySelector('input[name="search"]').value;
+                    if (query.trim()) {
+                        alert(`Searching for: ${query}`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
